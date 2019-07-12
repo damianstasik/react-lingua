@@ -22,7 +22,7 @@ export type PlaceholderValues = {
   [key: string]: string;
 };
 
-export type I18nProps = {
+export type TranslationProps = {
   id: string;
   values?: {
     [key: string]: JSX.Element;

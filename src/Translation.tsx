@@ -1,10 +1,7 @@
-import {
-  createElement, cloneElement, Fragment, useMemo,
-} from 'react';
+import { createElement, cloneElement, Fragment, useMemo } from 'react';
+import { TranslationProps, useTranslation } from '.';
 
-import { I18nProps, useTranslation } from '.';
-
-export const I18n: React.FC<I18nProps> = ({ id, values = {} }) => {
+export const Translation: React.FC<TranslationProps> = ({ id, values = {} }) => {
   const { t } = useTranslation();
   const translation = t(id);
 

@@ -52,7 +52,7 @@ render(<App />, document.getElementById('app'));
 ```jsx
 // src/Main.js
 import React from 'react';
-import { I18n, useTranslation } from 'this-package-name';
+import { Translation, useTranslation } from 'this-package-name';
 
 export const Main = () => {
   const { t, locale, setLocale } = useTranslation();
@@ -62,7 +62,7 @@ export const Main = () => {
       <h1>{t('helloWorld')}</h1>
       <h2>{t('welcome', { name: 'Dominika' })}</h2>
       <p>
-        <I18n
+        <Translation
           id="info"
           values={{
             someComp: <strong>{t('infoPart')}</strong>

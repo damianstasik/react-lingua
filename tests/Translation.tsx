@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { I18nProvider, I18n } from '../src';
+import { I18nProvider, Translation } from '../src';
 
 const initialLocale = 'en-US';
 
@@ -20,7 +20,7 @@ describe('Trans', () => {
   it('renders simple translations', () => {
     const wrapper1 = shallow(
       <I18nProvider {...providerProps}>
-        <I18n id="test" />
+        <Translation id="test" />
       </I18nProvider>,
     );
 
@@ -28,7 +28,7 @@ describe('Trans', () => {
 
     const wrapper2 = shallow(
       <I18nProvider {...providerProps}>
-        <I18n id="someNamespace:test" />
+        <Translation id="someNamespace:test" />
       </I18nProvider>,
     );
 
@@ -38,7 +38,7 @@ describe('Trans', () => {
   it('renders translation that contains component inside', () => {
     const wrapper = shallow(
       <I18nProvider {...providerProps}>
-        <I18n
+        <Translation
           id="jsx1"
           values={{
             comp: <strong>works</strong>,
@@ -53,7 +53,7 @@ describe('Trans', () => {
   it('renders translation that contains two components inside', () => {
     const wrapper = shallow(
       <I18nProvider {...providerProps}>
-        <I18n
+        <Translation
           id="jsx3"
           values={{
             comp: <strong>works</strong>,
@@ -69,7 +69,7 @@ describe('Trans', () => {
   it('renders translation key when translation was not found', () => {
     const wrapper = shallow(
       <I18nProvider {...providerProps}>
-        <I18n id="someKey" />
+        <Translation id="someKey" />
       </I18nProvider>,
     );
 
@@ -79,7 +79,7 @@ describe('Trans', () => {
   it('renders translation that has overriden new line placeholder by something else', () => {
     const wrapper = shallow(
       <I18nProvider {...providerProps}>
-        <I18n
+        <Translation
           id="jsx2"
           values={{
             break: <div />,
