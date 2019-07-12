@@ -1,3 +1,3 @@
 export { I18nProvider } from './context';
-export * from './hooks';
-export * from './Translation';
+export { useTranslation } from './hooks';
+export { Translation } from './Translation';

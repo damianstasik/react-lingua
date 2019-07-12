@@ -1,7 +1,7 @@
 import {
   replacePlaceholders,
   getT,
-} from '../src';
+} from '../src/utils';
 
 const messages = {
   test: 'Hello World',
