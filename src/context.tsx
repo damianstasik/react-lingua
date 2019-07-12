@@ -1,6 +1,6 @@
 import React, { createContext, useState, useMemo } from 'react';
 
-type I18nContextProps = {
+export type I18nContextProps = {
   initialLocale: string;
   translations: {
     [key: string]: {
@@ -10,7 +10,7 @@ type I18nContextProps = {
   onChange?: (prevLocale: string, newLocale: string) => void;
 };
 
-type I18nContextValue = {
+export type I18nContextValue = {
   locale: string;
   setLocale: (value: string) => void;
   translations: {

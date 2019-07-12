@@ -26,5 +26,7 @@ export const getT = (translations: { [key: string]: string }, namespace?: string
     return translationId;
   }
 
-  return placeholderValues ? replacePlaceholders(translation, placeholderValues) : translation;
+  return placeholderValues
+    ? replacePlaceholders(translation, placeholderValues)
+    : translation;
 };
