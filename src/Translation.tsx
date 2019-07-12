@@ -1,7 +1,14 @@
 import { createElement, cloneElement, Fragment, useMemo } from 'react';
-import { TranslationProps, useTranslation } from '.';
+import { useTranslation } from '.';
 
-export const Translation: React.FC<TranslationProps> = ({ id, values = {} }) => {
+type Props = {
+  id: string;
+  values?: {
+    [key: string]: JSX.Element | string;
+  };
+};
+
+export const Translation: React.FC<Props> = ({ id, values = {} }) => {
   const { t } = useTranslation();
   const translation = t(id);
 

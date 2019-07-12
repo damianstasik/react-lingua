@@ -1,5 +1,22 @@
 import React, { createContext, useState, useMemo } from 'react';
-import { I18nContextProps, I18nContextValue } from '.';
+
+type I18nContextProps = {
+  initialLocale: string;
+  translations: {
+    [key: string]: {
+      [key: string]: string;
+    };
+  };
+  onChange?: (prevLocale: string, newLocale: string) => void;
+};
+
+type I18nContextValue = {
+  locale: string;
+  setLocale: (value: string) => void;
+  translations: {
+    [key: string]: string;
+  };
+};
 
 export const I18nContext = createContext({} as I18nContextValue);
 

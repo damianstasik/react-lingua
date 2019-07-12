@@ -1,4 +1,6 @@
-import { PlaceholderValues } from './typings';
+type PlaceholderValues = {
+  [key: string]: string;
+};
 
 export const replacePlaceholders = (
   text: string,
