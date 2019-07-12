@@ -7,10 +7,9 @@ export const replacePlaceholders = (
   .entries(keyValuePairs)
   .reduce((result, [key, value]) => result.replace(`{${key}}`, value), text);
 
-export const getTranslationId = (
-  id: string,
-  translations: { [key: string]: string },
-  namespace?: string,
+export const getT = (translations: { [key: string]: string }, namespace?: string) => (
+  id: any,
+  placeholderValues?: PlaceholderValues,
 ): string => {
   let translationId: string = id;
   const namespacedId = `${namespace}:${id}`;
@@ -19,14 +18,6 @@ export const getTranslationId = (
     translationId = namespacedId;
   }
 
-  return translationId;
-};
-
-export const getT = (translations: { [key: string]: string }, namespace?: string) => (
-  id: any,
-  placeholderValues?: PlaceholderValues,
-): string => {
-  const translationId = getTranslationId(id, translations, namespace);
   const translation = translations[translationId];
 
   if (!translation) {

@@ -1,6 +1,5 @@
 import {
   replacePlaceholders,
-  getTranslationId,
   getT,
 } from '../src';
 
@@ -32,31 +31,31 @@ describe('i18n/utils', () => {
     });
   });
 
-  describe('getTranslationId', () => {
-    it('returns output that is same as input due to empty translations', () => {
-      expect(getTranslationId('test', {})).toEqual('test');
-      expect(getTranslationId('test2', {})).toEqual('test2');
-      expect(getTranslationId('ns:test2', {})).toEqual('ns:test2');
-    });
+  // describe('getTranslationId', () => {
+  //   it('returns output that is same as input due to empty translations', () => {
+  //     expect(getTranslationId('test', {})).toEqual('test');
+  //     expect(getTranslationId('test2', {})).toEqual('test2');
+  //     expect(getTranslationId('ns:test2', {})).toEqual('ns:test2');
+  //   });
 
-    it('returns output that is same as input due to empty translations and missing namespace', () => {
-      expect(getTranslationId('test', {}, 'ns')).toEqual('test');
-      expect(getTranslationId('test2', {}, 'ns')).toEqual('test2');
-      expect(getTranslationId('ns:test2', {}, 'ns')).toEqual('ns:test2');
-    });
+  //   it('returns output that is same as input due to empty translations and missing namespace', () => {
+  //     expect(getTranslationId('test', {}, 'ns')).toEqual('test');
+  //     expect(getTranslationId('test2', {}, 'ns')).toEqual('test2');
+  //     expect(getTranslationId('ns:test2', {}, 'ns')).toEqual('ns:test2');
+  //   });
 
-    it('returns output that is same as input due to missing namespace', () => {
-      expect(getTranslationId('test', messages)).toEqual('test');
-      expect(getTranslationId('test2', messages)).toEqual('test2');
-      expect(getTranslationId('ns:test2', messages)).toEqual('ns:test2');
-    });
+  //   it('returns output that is same as input due to missing namespace', () => {
+  //     expect(getTranslationId('test', messages)).toEqual('test');
+  //     expect(getTranslationId('test2', messages)).toEqual('test2');
+  //     expect(getTranslationId('ns:test2', messages)).toEqual('ns:test2');
+  //   });
 
-    it('returns proper translation ids when translations and namespace are provided', () => {
-      expect(getTranslationId('test', messages, 'ns')).toEqual('test');
-      expect(getTranslationId('test2', messages, 'ns')).toEqual('ns:test2');
-      expect(getTranslationId('ns:test2', messages, 'ns')).toEqual('ns:test2');
-    });
-  });
+  //   it('returns proper translation ids when translations and namespace are provided', () => {
+  //     expect(getTranslationId('test', messages, 'ns')).toEqual('test');
+  //     expect(getTranslationId('test2', messages, 'ns')).toEqual('ns:test2');
+  //     expect(getTranslationId('ns:test2', messages, 'ns')).toEqual('ns:test2');
+  //   });
+  // });
 
   describe('getT', () => {
     it('returns translation key when translation was not found', () => {
