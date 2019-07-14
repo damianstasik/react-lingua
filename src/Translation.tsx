@@ -1,5 +1,5 @@
 import { createElement, cloneElement, Fragment, useMemo } from 'react';
-import { useTranslation } from '.';
+import { useTranslation } from './hooks';
 
 type Props = {
   id: string;
