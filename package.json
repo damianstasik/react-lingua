@@ -1,6 +1,7 @@
 {
   "name": "react-lingua",
   "description": "A simple i18n engine for React",
+  "repository": "visualfanatic/react-lingua",
   "keywords": ["i18n", "react", "lang", "language", "lingua", "translate", "translation", "internationalization"],
   "version": "0.1.0",
   "license": "MIT",

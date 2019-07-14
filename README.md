@@ -4,7 +4,7 @@ A simple i18n engine for React.
 
 ## Main goals
 
-* Light & fast
+* Lightweight & fast
 * No dependencies
 * Ability to dynamically change locale
 * Hooks!
@@ -38,7 +38,7 @@ const translations = {
 
 const App = () => (
   <I18nProvider
-    initialLocale='en-US'
+    initialLocale="en-US"
     translations={translations}
     onChange={(prevLocale, newLocale) => console.log(`Changed from ${prevLocale} to ${newLocale}`)}
   >
