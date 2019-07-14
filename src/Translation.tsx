@@ -4,7 +4,7 @@ import { useTranslation } from './hooks';
 type Props = {
   id: string;
   values?: {
-    [key: string]: JSX.Element | string;
+    [key: string]: React.ReactChild;
   };
 };
 
@@ -15,7 +15,7 @@ export const Translation: React.FC<Props> = ({ id, values = {} }) => {
   const children = useMemo(
     () => Object
       .entries(values)
-      .reduce<(JSX.Element | string)[]>((components, [k, v]) => {
+      .reduce<React.ReactChild[]>((components, [k, v]) => {
         const key = `{${k}}`;
         const index = components.findIndex(component => typeof component === 'string' && component.includes(key));
 
