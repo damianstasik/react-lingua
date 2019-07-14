@@ -15,14 +15,14 @@ export const Translation: React.FC<Props> = ({ id, values = {} }) => {
   const children = useMemo(
     () => Object
       .entries(values)
-      .reduce<React.ReactChild[]>((components, [k, v]) => {
-        const key = `{${k}}`;
-        const index = components.findIndex(component => typeof component === 'string' && component.includes(key));
+      .reduce<React.ReactChild[]>((components, [key, value]) => {
+        const placeholder = `{${key}}`;
+        const index = components.findIndex(component => typeof component === 'string' && component.includes(placeholder));
 
-        if (index >= 0 && isValidElement(v)) {
-          const [left, right] = (components[index] as string).split(key);
+        if (index >= 0 && isValidElement(value)) {
+          const [left, right] = (components[index] as string).split(placeholder);
 
-          components.splice(index, 1, left, cloneElement(v, { key: k }), right);
+          components.splice(index, 1, left, cloneElement(value, { key }), right);
         }
 
         return components;
