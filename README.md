@@ -1,11 +1,11 @@
-# i18n
+# react-lingua
 
 A simple i18n engine for React.
 
 ## Main goals
 
 * Light & fast
-* (Almost) no dependencies
+* No dependencies
 * Ability to dynamically change locale
 * Hooks!
 * Placeholder replacement
@@ -18,7 +18,7 @@ A simple i18n engine for React.
 // src/App.js
 import React from 'react';
 import { render } from 'react-dom';
-import { I18nProvider } from 'this-package-name';
+import { I18nProvider } from 'react-lingua';
 import { Main } from './Main';
 
 const translations = {
@@ -52,7 +52,7 @@ render(<App />, document.getElementById('app'));
 ```jsx
 // src/Main.js
 import React from 'react';
-import { Translation, useTranslation } from 'this-package-name';
+import { Translation, useTranslation } from 'react-lingua';
 
 export const Main = () => {
   const { t, locale, setLocale } = useTranslation();
@@ -76,7 +76,6 @@ export const Main = () => {
 
 ## TODO
 
-* Set up Rollup bundling
 * Prepare live examples (preferably on codesandbox.io)
 * Figure out the most efficient way of importing locales that are not used
 * Maybe a better directory structure
