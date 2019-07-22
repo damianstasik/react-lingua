@@ -17,11 +17,11 @@ action "Run npm audit" {
 action "Run linter" {
   uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
   needs = ["Run npm audit"]
-  args = "lint"
+  args = "run lint"
 }
 
 action "Run tests" {
   uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
   needs = ["Run linter"]
-  args = "test"
+  args = "run test"
 }
