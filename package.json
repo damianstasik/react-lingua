@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "lint": "eslint . --ext js,ts,tsx --fix",
+    "lint": "eslint . --ext js,ts,tsx",
     "build": "tsc && rollup -c"
   },
   "author": {
