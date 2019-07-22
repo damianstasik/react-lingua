@@ -1,4 +1,4 @@
-# react-lingua
+# react-lingua ![Build](https://action-badges.now.sh/JasonEtco/action-badges)
 
 A simple i18n engine for React.
 
@@ -79,7 +79,6 @@ export const Main = () => {
 * Prepare live examples (preferably on codesandbox.io)
 * Figure out the most efficient way of importing locales that are not used
 * Maybe a better directory structure
-* CI
 * A bit more tests
 * A bit better typings
 * Add a few comments here and there for better DX
