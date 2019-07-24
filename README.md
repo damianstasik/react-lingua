@@ -2,6 +2,16 @@
 
 A simple i18n engine for React.
 
+## Installation
+
+```
+yarn add react-lingua
+```
+
+```
+npm i react-lingua
+```
+
 ## Main goals
 
 * Lightweight & fast
