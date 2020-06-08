@@ -1,4 +1,5 @@
-import React, { createContext, useState, useMemo } from 'react';
+import * as React from 'react';
+import { createContext, useState, useMemo } from 'react';
 
 export type I18nContextProps = {
   initialLocale: string;
@@ -21,10 +22,13 @@ export type I18nContextValue = {
 export const I18nContext = createContext({} as I18nContextValue);
 
 export const I18nProvider: React.FunctionComponent<I18nContextProps> = (props) => {
-  const { children, initialLocale, translations, onChange } = props;
+  const {
+    children, initialLocale, translations, onChange,
+  } = props;
+
   const [locale, setLocale] = useState(initialLocale);
 
-  const value = {
+  const memoizedValue = useMemo(() => ({
     locale,
     translations: translations[locale],
     setLocale(newLocale: string) {
@@ -34,9 +38,7 @@ export const I18nProvider: React.FunctionComponent<I18nContextProps> = (props) =
         onChange(locale, newLocale);
       }
     },
-  };
-
-  const memoizedValue = useMemo(() => value, [value.locale]);
+  }), [locale]);
 
   return (
     <I18nContext.Provider value={memoizedValue}>

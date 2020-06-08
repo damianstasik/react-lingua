@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import * as React from 'react';
 import { mount } from 'enzyme';
 import { useTranslation } from '../src/hooks';
 import { I18nProvider, I18nContextProps } from '../src/context';
@@ -14,7 +14,7 @@ describe('hooks', () => {
     it('returns correct translation', () => {
       const App = () => {
         const { locale } = useTranslation();
-        return <Fragment>{locale}</Fragment>;
+        return <>{locale}</>;
       };
 
       const wrapper = mountWithProvider(App, {
@@ -30,7 +30,7 @@ describe('hooks', () => {
     it('returns correct initial locale', () => {
       const App = () => {
         const { locale } = useTranslation();
-        return <Fragment>{locale}</Fragment>;
+        return <>{locale}</>;
       };
 
       const wrapper = mountWithProvider(App, {
@@ -47,7 +47,7 @@ describe('hooks', () => {
       const App = () => {
         const { locale, setLocale } = useTranslation();
         setLocale('de-DE');
-        return <Fragment>{locale}</Fragment>;
+        return <>{locale}</>;
       };
 
       const onChange = jest.fn();

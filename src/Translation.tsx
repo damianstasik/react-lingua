@@ -1,4 +1,7 @@
-import { createElement, cloneElement, Fragment, useMemo, isValidElement } from 'react';
+import {
+  createElement, cloneElement, Fragment, useMemo, isValidElement,
+} from 'react';
+
 import { useTranslation } from './hooks';
 
 type Props = {
@@ -15,9 +18,10 @@ export const Translation: React.FC<Props> = ({ id, values = {} }) => {
   const children = useMemo(
     () => Object
       .entries(values)
-      .reduce<React.ReactChild[]>((components, [key, value]) => {
+      .reduce<React.ReactChild[]>(
+      (components, [key, value]) => {
         const placeholder = `{${key}}`;
-        const index = components.findIndex(component => typeof component === 'string' && component.includes(placeholder));
+        const index = components.findIndex((component) => typeof component === 'string' && component.includes(placeholder));
 
         if (index >= 0 && isValidElement(value)) {
           const [left, right] = (components[index] as string).split(placeholder);
@@ -26,7 +30,9 @@ export const Translation: React.FC<Props> = ({ id, values = {} }) => {
         }
 
         return components;
-      }, [translation]),
+      },
+      [translation],
+    ),
     [translation],
   );
 
