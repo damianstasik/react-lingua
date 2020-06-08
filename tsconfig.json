@@ -15,5 +15,5 @@
     "declaration": true,
     "emitDeclarationOnly": true,
   },
-  "exclude": ["tests", "dist"]
+  "exclude": ["node_modules", "dist"]
 }
