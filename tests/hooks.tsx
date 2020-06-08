@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect } from 'react';
 import { mount } from 'enzyme';
 import { useTranslation } from '../src/hooks';
 import { I18nProvider, I18nContextProps } from '../src/context';
@@ -46,7 +47,11 @@ describe('hooks', () => {
     it('correctly sets new locale and triggers onChange callback', () => {
       const App = () => {
         const { locale, setLocale } = useTranslation();
-        setLocale('de-DE');
+
+        useEffect(() => {
+          setLocale('de-DE');
+        }, []);
+
         return <>{locale}</>;
       };
 
