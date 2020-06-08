@@ -26,7 +26,7 @@ npm i react-lingua
 
 ```jsx
 // src/App.js
-import React from 'react';
+import * as React from 'react';
 import { render } from 'react-dom';
 import { I18nProvider } from 'react-lingua';
 import { Main } from './Main';
@@ -61,7 +61,7 @@ render(<App />, document.getElementById('app'));
 
 ```jsx
 // src/Main.js
-import React from 'react';
+import * as React from 'react';
 import { Translation, useTranslation } from 'react-lingua';
 
 export const Main = () => {
