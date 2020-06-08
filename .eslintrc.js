@@ -1,35 +1,15 @@
 module.exports = {
-  root: true,
-  parser: 'babel-eslint',
-  extends: 'airbnb',
+  extends: 'airbnb-typescript',
   env: {
     jest: true,
     browser: true,
   },
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.ts', '.tsx'],
-      },
-    },
+  parserOptions: {
+    project: './tsconfig.json',
   },
   rules: {
-    'react/prop-types': 'off',
-    'react/jsx-filename-extension': 'off',
     'import/prefer-default-export': 'off',
+    'react/prop-types': 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
-  overrides: [
-    {
-      files: ['**/*.ts', '**/*.tsx'],
-      parser: '@typescript-eslint/parser',
-      parserOptions: {
-        project: './tsconfig.json',
-      },
-      plugins: ['@typescript-eslint'],
-      rules: {
-        'no-unused-vars': 'off',
-        'object-curly-newline': 'off',
-      },
-    },
-  ],
 };
