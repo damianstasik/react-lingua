@@ -5,7 +5,7 @@ module.exports = {
     browser: true,
   },
   parserOptions: {
-    project: './tsconfig.json',
+    project: './tsconfig.eslint.json',
   },
   rules: {
     'import/prefer-default-export': 'off',
