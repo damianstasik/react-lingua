@@ -1,4 +1,4 @@
-# react-lingua ![Build](https://action-badges.now.sh/JasonEtco/action-badges)
+# react-lingua ![Build](https://action-badges.now.sh/visualfanatic/react-lingua)
 
 A simple i18n engine for React.
 
